@@ -16,7 +16,7 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 
@@ -40,7 +40,7 @@ body {
 }
 
 .sidebar ul li {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     padding-left: 20px;
     transition: background-color 0.3s ease;
 }
@@ -203,4 +203,12 @@ body {
 
 .tarjeta:hover {
     transform: translateY(-5px);
+}
+
+.tarjeta-link{
+    text-decoration: none;
+}
+
+.tarjeta-link:hover{
+    text-decoration: none;
 }
