@@ -1,0 +1,179 @@
+/* Estilo común para ambos formularios */
+.form-container {
+    display: flex; 
+    justify-content: space-between;
+    gap: 2rem; 
+}
+
+/* Columna izquierda y derecha (50% de ancho cada una) */
+.left-column, .right-column {
+    flex: 1; 
+}
+
+/* Estilo general para cada input y select */
+.input-nombre, .input-apellido, .input-run, .input-fecha-nacimiento, .input-etnia,
+.input-numero-emergencia, .input-colegio-procedencia, .input-beneficio-junaeb,
+.input-sistema-salud, .input-run, .input-nacionalidad, .input-oficio,
+.input-domicilio, .input-nivel-educacional {
+    color: black;
+    display: block;
+    margin-bottom: 2rem; 
+}
+
+/* Estilo para el label */
+input[type="text"], input[type="date"], select, .input-nombre label, .input-apellido label, .input-fecha-nacimiento label, 
+.input-etnia label, .input-numero-emergencia label, .input-colegio-procedencia label, .input-beneficio-junaeb label,
+.input-sistema-salud label, .input-run label, .input-nacionalidad label, .input-oficio label,
+.input-domicilio label, .input-nivel-educacional label {
+    display: block;
+    margin-bottom: 0.5rem; 
+}
+
+/* Estilo para los inputs y selects */
+input[type="text"], input[type="date"], select, .input-nombre input, .input-apellido input,
+.input-fecha-nacimiento input, .input-etnia input, .input-numero-emergencia input, 
+.input-colegio-procedencia input, .input-beneficio-junaeb input, .input-sistema-salud input, 
+.input-run input, .input-nacionalidad input, .input-oficio input, .input-domicilio input, 
+.input-nivel-educacional select {
+    display: block;
+    width: 70%; /* Ancho completo */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 13px;
+}
+
+/* Estilo de mensaje de error */
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Botón de envío (colocado en la columna derecha) */
+.btn-submit {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #357e37;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #23aa2c;
+}
+
+/* Estilo del select cuando se selecciona una opción */
+select {
+    background-color: #f0f0f0; 
+    color: #333; 
+}
+
+select option:hover {
+    background-color: #ff2003; 
+}
+
+select option:checked {
+    background-color: #8a8989; 
+    color: white; 
+}
+
+/* Estilos generales para los botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Botón de submit */
+.btn-submit {
+    background-color: #28a745; 
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: #218838; 
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    background-color: #1e7e34;
+    transform: translateY(1px);
+}
+
+/* Botón de volver */
+.btn-back {
+    background-color: #a0a0a0; 
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-back:hover {
+    background-color: #333; 
+    transform: translateY(-2px);
+}
+
+.btn-back:active {
+    background-color: #333;
+    transform: translateY(1px);
+}
+
+/* Botón de inicio */
+.btn-home {
+    background-color: #007bff; 
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-home:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-home:active {
+    background-color: #004085;
+    transform: translateY(1px);
+}
+
+/* mensaje de éxito matricula */
+.success-message {
+    padding: 20px;
+    text-align: center;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.success-message h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.success-message a {
+    display: inline-block;
+    margin: 10px 15px;
+}
+
+
+.custom-icon {
+    font-size: 510px; 
+}
+
+.error-message {
+    color: red !important;
+    font-size: 1.1rem !important;
+    margin-top: 5px !important;
+}

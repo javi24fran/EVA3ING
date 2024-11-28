@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Matrícula{% endblock %}
+
+{% block content %}
+<h1>Formulario de Matrícula</h1>
+<form>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo">
+    </div>
+    <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico">
+    </div>
+    <div class="mb-3">
+        <label for="curso" class="form-label">Curso</label>
+        <select class="form-select" id="curso">
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock %}

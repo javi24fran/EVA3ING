@@ -1,0 +1,165 @@
+/* Estilos para la tabla de la lista de alumnos */
+.table-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f7fb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background-color: #200769;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de agregar nuevo alumno */
+.add-alumno-btn {
+    background-color: #200769;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.add-alumno-btn:hover {
+    background-color: #200769;
+}
+
+.inp-buscar{
+    background-color: #ddd;
+    border: none;
+    padding: 13px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+/* Cambiar el color del texto del placeholder */
+.inp-buscar::placeholder {
+    color: #888;
+    transition: color 0.3s ease;
+    font-size: 18px;
+}
+
+/* Cambiar el color del placeholder al hacer foco */
+.inp-buscar:focus::placeholder {
+    color: #555;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+/* Campo de búsqueda */
+.inp-buscar {
+    background-color: #f4f4f4;
+    border: none;
+    padding: 10px 40px 10px 35px; 
+    border-radius: 20px;
+    width: 30%; 
+    box-sizing: border-box;
+    padding: 13px;
+    padding-left: 50px;
+    padding-top: 17px;
+    font-size: 15px;
+}
+
+/* Estilo del ícono */
+.search-icon {
+    position: absolute;
+    left: 10px; 
+    font-size: 18px;
+    color: #aaa;
+    pointer-events: none; 
+    height: 100%;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 5px; 
+}
+
+/* Cambiar el color del texto del placeholder */
+.inp-buscar::placeholder {
+    padding-left: 3px;
+    color: #b4b4b4;
+    transition: color 0.3s ease;
+}
+
+/* Cambiar el color del placeholder al hacer foco */
+.inp-buscar:focus::placeholder {
+    color: #f4f4f4;
+    font-size: 20px;
+}
+
+/* Cambiar el color del ícono al enfocar */
+.inp-buscar:focus + .search-icon {
+    color: #f4f4f4;
+    font-size: 20px;
+}
+.search-btn {
+    right: 10px; 
+    transform: translateY(-50%);
+    background-color: #200769;
+    border: none;
+    color: white;
+    border-radius: 50%; 
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+/* Cambiar el color del botón al pasar el mouse */
+.search-btn:hover {
+    background-color: #001bb3;
+}
+p{
+    margin-top: 0px;
+}

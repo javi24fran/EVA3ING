@@ -1,0 +1,241 @@
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+<h2>Formulario de Matrícula</h2>
+
+<!-- Formulario de Alumno -->
+<form method="POST" id="form_alumno" {% if not show_alumno_form %}style="display:none;"{% endif %}>
+    {% csrf_token %}
+    <div class="form-container">
+        <div class="left-column">
+            <div class="input-nombre">
+                <label for="{{ alumno_form.nombre.id_for_label }}">Nombre</label>
+                {{ alumno_form.nombre }}
+                {% if alumno_form.nombre.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.nombre.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-apellido">
+                <label for="{{ alumno_form.apellido.id_for_label }}">Apellido</label>
+                {{ alumno_form.apellido }}
+                {% if alumno_form.apellido.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.apellido.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-run">
+                <label for="{{ alumno_form.run.id_for_label }}">Run</label>
+                {{ alumno_form.run }}
+                {% if alumno_form.run.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.run.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-fecha-nacimiento">
+                <label for="{{ alumno_form.fecha_nacimiento.id_for_label }}">Fecha de Nacimiento</label>
+                {{ alumno_form.fecha_nacimiento }}
+                {% if alumno_form.fecha_nacimiento.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.fecha_nacimiento.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-numero-emergencia">
+                <label for="{{ alumno_form.numero_emergencia.id_for_label }}">Número de Emergencia</label>
+                {{ alumno_form.numero_emergencia }}
+                {% if alumno_form.numero_emergencia.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.numero_emergencia.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-colegio-procedencia">
+                <label for="{{ alumno_form.colegio_procedencia.id_for_label }}">Colegio de Procedencia</label>
+                {{ alumno_form.colegio_procedencia }}
+                {% if alumno_form.colegio_procedencia.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.colegio_procedencia.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="input-etnia">
+                <label for="{{ alumno_form.etnia.id_for_label }}">Etnia</label>
+                {{ alumno_form.etnia }}
+                {% if alumno_form.etnia.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.etnia.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-beneficio-junaeb">
+                <label for="{{ alumno_form.beneficio_junaeb.id_for_label }}">Beneficio JUNAEB</label>
+                {{ alumno_form.beneficio_junaeb }}
+                {% if alumno_form.beneficio_junaeb.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.beneficio_junaeb.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="input-sistema-salud">
+                <label for="{{ alumno_form.sistema_salud.id_for_label }}">Sistema de Salud</label>
+                {{ alumno_form.sistema_salud }}
+                {% if alumno_form.sistema_salud.errors %}
+                    <div class="error-message">
+                        {% for error in alumno_form.sistema_salud.errors %}
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button type="submit" name="form_alumno" class="btn btn-submit">SIGUIENTE</button>
+        </div>
+    </div>
+</form>
+
+{% if show_apoderado_form %}
+    <form method="POST" id="form_apoderado" style="display:block;">
+        {% csrf_token %}
+        <div class="form-container">
+            <div class="left-column">
+                <div class="input-nombre">
+                    <label for="{{ apoderado_form.nombre.id_for_label }}">Nombre</label>
+                    {{ apoderado_form.nombre }}
+                    {% if apoderado_form.nombre.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.nombre.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-apellido">
+                    <label for="{{ apoderado_form.apellido.id_for_label }}">Apellido</label>
+                    {{ apoderado_form.apellido }}
+                    {% if apoderado_form.apellido.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.apellido.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-run">
+                    <label for="{{ apoderado_form.run.id_for_label }}">RUN</label>
+                    {{ apoderado_form.run }}
+                    {% if apoderado_form.run.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.run.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-nacionalidad">
+                    <label for="{{ apoderado_form.nacionalidad.id_for_label }}">Nacionalidad</label>
+                    {{ apoderado_form.nacionalidad }}
+                    {% if apoderado_form.nacionalidad.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.nacionalidad.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-oficio">
+                    <label for="{{ apoderado_form.oficio.id_for_label }}">Oficio</label>
+                    {{ apoderado_form.oficio }}
+                    {% if apoderado_form.oficio.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.oficio.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="input-domicilio">
+                    <label for="{{ apoderado_form.domicilio.id_for_label }}">Domicilio</label>
+                    {{ apoderado_form.domicilio }}
+                    {% if apoderado_form.domicilio.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.domicilio.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-nivel-educacional">
+                    <label for="{{ apoderado_form.nivel_educacional.id_for_label }}">Nivel Educacional</label>
+                    {{ apoderado_form.nivel_educacional }}
+                    {% if apoderado_form.nivel_educacional.errors %}
+                        <div class="error-message">
+                            {% for error in apoderado_form.nivel_educacional.errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <a href="javascript:history.back()" class="btn btn-back">VOLVER</a>
+                <button type="submit" name="form_apoderado" class="btn btn-submit">ENVIAR</button>
+                
+            </div>
+        </div>
+    </form>
+{% endif %}
+
+{% if registro_exitoso %}
+    <div class="success-message">
+        <i class="bi bi-check-circle-fill" style="font-size: 40px;"></i>
+        <h3>¡Registro Exitoso!</h3>
+        <a href="{% url 'matricula' %}" class="btn btn-submit">Registrar Otro Alumno</a>
+        <a href="{% url 'index' %}" class="btn btn-home">Ir al Inicio</a>
+    </div>
+{% endif %}
+
+{% endblock %}
+
+
+
+

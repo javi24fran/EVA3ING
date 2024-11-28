@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Inicio{% endblock %}</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6H7T0znbm4Wn3KryE+uU1r+Ug7W5u5btK5dWVJ6dTYfR0HjSSv/5MW7ZFM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2 id="list-title"></h2>
+
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}" class="menu-link {% if request.path == '/' %}active{% endif %}">
+                        <i class="bi bi-house-door" style="padding-right: 15px; color: #200769; font-size: 24px;"></i> Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'matricula' %}" class="menu-link {% if request.path == '/matricula/' %}active{% endif %}">
+                        <i class="bi bi-pencil" style="padding-right: 15px; color: #200769; font-size: 24px;"></i> Matricula
+                    </a>
+                </li>
+                <li><a href="{% url 'lista_alumnos' %}" class="menu-link {% if request.path == '/lista-alumnos/' %}active{% endif %}"><i class="bi bi-list-ul" style="padding-right: 15px; color: #200769; font-size: 24px;"></i> Lista Alumnos</a></li>
+                <br><br><br><br><br><br><br><br><br>
+                <hr>
+                <br>
+                <li><a class="cerrar" href="{% url 'logout' %}" style="margin-top: 100px;"><i class="bi bi-power" style="padding-right: 15px; color: #200769; font-size: 24px;"></i> Cerrar sesión</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <nav class="nav-bar" style="background-color: white;">
+            </nav>
+            <h1>LICEO BICENTENARIO MERCEDES FRITIS</h1>
+            <hr>
+
+            {% block content %}
+                {% if request.path == '/' %}
+                <br><br>
+                    <div class="tarjetas-container">
+                        <a href="{% url 'matricula' %}" class=" tarjeta-link">
+                        <div class="tarjeta tarjeta-1">
+                            <div class="color-top">
+                                <h2>Nueva <br>
+                                    Matricula</h2>
+                                
+                            </div>
+                            <div class="color-bottom">
+                                <p>Registra una matricula.</p>
+                            
+                            </div>
+                        </div>
+                        </a>
+                        
+                        <a href="{% url 'lista_alumnos' %}" class="tarjeta-link">
+                        <div class="tarjeta tarjeta-2">
+                            <div class="color-top">
+                                <h2>Editar
+                                    <br>
+                                     Matricula</h2>
+                            </div>
+                            <div class="color-bottom">
+                                <p>Modifica una matricula.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'lista_alumnos' %}" class="tarjeta-link">
+                        <div class="tarjeta tarjeta-3">
+                            <div class="color-top">
+                                <h2>Consultar Matricula</h2>
+                            </div>
+                            <div class="color-bottom">
+                                <p >Consulta lista de matriculas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+
+                {% if section == 'matricula' %}
+                    {% include 'ingApp/formulario_matricula.html' %}
+                {% endif %}
+            {% endblock content %}
+            
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqHvL0bB+2R+57ZT9xaMhZfNjq7ZjjU3ckf7mFzLfHbgp" crossorigin="anonymous"></script>
+    <script>
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuLinks.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>  
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'matriculaapp/index.html' %}
+
+{% block title %}Lista de Alumnos{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/lista.css' %}">
+<h2>Lista de Alumnos</h2>
+
+<!-- Formulario de búsqueda -->
+<form method="GET" action="{% url 'lista_alumnos' %}" class="mb-4">
+    <div class="search-container">
+        <i class="bi bi-search search-icon"></i> <!-- Ícono de búsqueda de Bootstrap -->
+        <input 
+            type="text" 
+            name="search" 
+            class="form-control inp-buscar" 
+            placeholder="Buscador" 
+            value="{{ search }}">   
+    </div>
+</form>
+
+<!-- Mostrar el total de alumnos -->
+<p><strong>{{ alumnos.count }}</strong> Matriculas</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Alumno</th>
+            <th>Apoderado</th>  
+            <th>Fono</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno.id }}</td>
+            <td>{{ alumno.nombre }} {{ alumno.apellido }}</td>            
+            <td>
+                {% if alumno.apoderado %}
+                    {{ alumno.apoderado.nombre }} {{ alumno.apoderado.apellido }}
+                {% else %}
+                    No tiene apoderado
+                {% endif %}
+            </td>
+            <td>{{ alumno.numero_emergencia }}</td>
+            <td>
+                <a href="{% url 'detalle_alumno' alumno.id %}" class="btn btn-primary btn-sm">
+                    <i class="bi bi-info-circle custom-icon"></i>
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay alumnos que coincidan con la búsqueda</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
