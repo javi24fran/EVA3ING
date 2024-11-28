@@ -18,7 +18,7 @@ from django.urls import path
 from matriculaapp.views import index, CustomLoginView, matricula_view,lista_alumnos,detalle_alumno,actualizar_alumno,actualizar_apoderado,eliminar_alumno
 from django.contrib.auth import views as auth_views
 
-urlpatterns = [
+urlpatterns = [ 
     path('admin/', admin.site.urls),
     path('accounts/login/', CustomLoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),

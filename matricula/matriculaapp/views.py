@@ -10,7 +10,7 @@ from django.db.models import Q
 
 @login_required
 def index(request):
-    return render(request, 'matriculaap/index.html')
+    return render(request, 'matriculaapp/index.html')
 
 
 @login_required
